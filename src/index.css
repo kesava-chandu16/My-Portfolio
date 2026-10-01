@@ -1,0 +1,59 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   HTML
+========================= */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0a0a0a;
+  color: white;
+  min-width: 320px;
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+  color: inherit;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+/* =========================
+   SELECTION
+========================= */
+
+::selection {
+  background: white;
+  color: black;
+}

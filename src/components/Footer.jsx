@@ -4,9 +4,10 @@ function Footer() {
 
       <div className="footer-container">
 
+        {/* Brand */}
         <div className="footer-brand">
           <a href="#home" className="footer-logo">
-            KCR
+            <span>K</span>CR
           </a>
 
           <p>
@@ -14,40 +15,23 @@ function Footer() {
           </p>
         </div>
 
-        <div className="footer-links">
-
-          <a
-            href="#home"
-          >
-            Home
-          </a>
-
-          <a
-            href="#about"
-          >
-            About
-          </a>
-
-          <a
-            href="#projects"
-          >
-            Projects
-          </a>
-
-          <a
-            href="#contact"
-          >
-            Contact
-          </a>
-
-        </div>
+        {/* Navigation */}
+        <nav className="footer-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
 
       </div>
 
+      {/* Bottom */}
       <div className="footer-bottom">
 
         <p>
-          © {new Date().getFullYear()} KesavaChandu Ravula
+          © {new Date().getFullYear()} Kesava Chandu Ravula
         </p>
 
         <p>

@@ -1,29 +1,38 @@
 function Education() {
   const education = [
     {
-      year: "2024 — 2028",
-      degree: "B.Tech — Computer Science & Engineering",
+      number: "01",
+      period: "2024 — 2028",
+      degree: "B.Tech",
+      field: "Computer Science & Engineering",
       specialization: "Artificial Intelligence & Machine Learning",
       institution:
         "Veltech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology",
       location: "Chennai, Tamil Nadu",
-      grade: "CGPA: 9.29 / 10",
+      result: "CGPA 9.2 / 10",
+      current: true,
     },
     {
-      year: "2022 — 2024",
-      degree: "Intermediate — Class XII",
+      number: "02",
+      period: "2022 — 2024",
+      degree: "Intermediate",
+      field: "Class XII",
       specialization: "MPC",
       institution: "Sri Chaitanya Junior College",
       location: "Andhra Pradesh",
-      grade: "Percentage: 94.1%",
+      result: "94.1%",
+      current: false,
     },
     {
-      year: "2022",
-      degree: "Secondary School — Class X",
+      number: "03",
+      period: "2022",
+      degree: "Secondary School",
+      field: "Class X",
       specialization: "Andhra Pradesh State Board",
-      institution: "Sri Chaitanya School",
+      institution: "Sri Chaitanya",
       location: "Andhra Pradesh",
-      grade: "Percentage: 84.3%",
+      result: "84.3%",
+      current: false,
     },
   ];
 
@@ -31,60 +40,97 @@ function Education() {
     <section className="education" id="education">
       <div className="section-container">
 
+        {/* Heading */}
         <div className="section-heading">
           <p className="section-label">EDUCATION</p>
 
           <h2>
             My academic
             <span className="education-heading-highlight">
-              journey.
+              {" "}journey.
             </span>
           </h2>
+
+          <p className="education-intro">
+            My academic path has given me a strong foundation in computer
+            science while allowing me to explore AI, software development,
+            and practical programming.
+          </p>
         </div>
 
+        {/* Education timeline */}
         <div className="education-timeline">
-
-          {education.map((item, index) => (
+          {education.map((item) => (
             <article
-              className="education-item"
-              key={item.year}
+              className={`education-card ${
+                item.current ? "education-current" : ""
+              }`}
+              key={item.number}
             >
 
-              <div className="education-marker">
-                <span>{String(index + 1).padStart(2, "0")}</span>
+              {/* Number */}
+              <div className="education-card-number">
+                {item.number}
               </div>
 
-              <div className="education-year">
-                {item.year}
-              </div>
+              {/* Main content */}
+              <div className="education-card-main">
 
-              <div className="education-content">
+                <div className="education-card-header">
 
-                <div className="education-title-row">
-                  <div>
+                  <div className="education-title-area">
+                    <span className="education-period">
+                      {item.period}
+                    </span>
+
                     <h3>{item.degree}</h3>
 
-                    <h4>{item.specialization}</h4>
+                    <h4>{item.field}</h4>
                   </div>
 
-                  <span className="education-grade">
-                    {item.grade}
-                  </span>
+                  <div className="education-result">
+                    <span>{item.result}</span>
+
+                    {item.current && (
+                      <small>CURRENT</small>
+                    )}
+                  </div>
+
                 </div>
 
-                <p className="education-institution">
-                  {item.institution}
-                </p>
+                {/* Details */}
+                <div className="education-card-details">
 
-                <p className="education-location">
-                  {item.location}
-                </p>
+                  <div className="education-detail">
+                    <span className="education-detail-label">
+                      SPECIALIZATION
+                    </span>
+
+                    <p>{item.specialization}</p>
+                  </div>
+
+                  <div className="education-detail">
+                    <span className="education-detail-label">
+                      INSTITUTION
+                    </span>
+
+                    <p>{item.institution}</p>
+                  </div>
+
+                  <div className="education-detail">
+                    <span className="education-detail-label">
+                      LOCATION
+                    </span>
+
+                    <p>{item.location}</p>
+                  </div>
+
+                </div>
 
               </div>
 
             </article>
           ))}
-
         </div>
 
       </div>

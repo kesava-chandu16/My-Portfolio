@@ -1,61 +1,95 @@
 function About() {
+  const journey = [
+    {
+      number: "01",
+      title: "Computer Science",
+      text: "Building a strong foundation in programming, OOP, DSA, DBMS, Operating Systems, and Computer Networks.",
+    },
+    {
+      number: "02",
+      title: "Java Development",
+      text: "Currently focused on Core Java, JDBC, MySQL, and building practical applications with Java.",
+    },
+    {
+      number: "03",
+      title: "Full Stack",
+      text: "Expanding into React, Spring Boot, and full-stack development to build complete applications.",
+    },
+    {
+      number: "04",
+      title: "AI & ML",
+      text: "Exploring Artificial Intelligence and Machine Learning through academic work and practical projects.",
+    },
+  ];
+
   return (
     <section className="about" id="about">
       <div className="section-container">
 
+        {/* Section heading */}
         <div className="section-heading">
           <p className="section-label">ABOUT ME</p>
 
           <h2>
-            Turning what I learn into
-            <span className="about-heading-highlight">
-              practical projects.
-            </span>
+            Learning.
+            <span className="about-heading-highlight"> Building.</span>
+            Growing.
           </h2>
+
+          <p className="about-section-intro">
+            A Computer Science student focused on becoming a strong software
+            developer through consistent learning, problem solving, and
+            practical project development.
+          </p>
         </div>
 
-        <div className="about-grid">
+        {/* Main About content */}
+        <div className="about-intro-grid">
 
-          {/* LEFT SIDE */}
           <div className="about-main">
+            <span className="about-small-label">WHO I AM</span>
 
             <p className="about-intro">
-              I'm KesavaChandu Ravula, a Computer Science and Engineering
+              I'm Kesava Chandu Ravula, a Computer Science and Engineering
               student specializing in Artificial Intelligence and Machine
-              Learning at Veltech University.
+              Learning at Veltech.
             </p>
 
             <p>
-              I'm currently focused on becoming a strong Java developer.
-              I enjoy solving programming problems, learning Data Structures
-              and Algorithms, and building practical applications that help
-              me turn concepts into real-world projects.
+              My current goal is to become a strong software developer. I enjoy
+              understanding how things work, solving programming problems, and
+              turning what I learn into practical applications.
             </p>
 
             <p>
-              My current technical interests include Java, MySQL, JDBC,
-              full-stack development, and AI-powered applications.
+              Right now, I'm putting most of my effort into Java, Data
+              Structures and Algorithms, MySQL, and full-stack development
+              while continuing to explore AI and ML.
             </p>
 
+            <div className="about-highlight-line">
+              <span></span>
+              <p>Learning by building real projects.</p>
+            </div>
           </div>
 
-          {/* RIGHT SIDE */}
-          <div className="about-side">
+          {/* Stats */}
+          <div className="about-stats">
 
-            <div className="about-stat">
-              <strong>9.29</strong>
-              <span>Current CGPA</span>
+            <div className="about-stat-card">
+              <span className="about-stat-number">9.2</span>
+              <span className="about-stat-label">CURRENT CGPA</span>
             </div>
 
-            <div className="about-stat">
-              <strong>2028</strong>
-              <span>Graduation Year</span>
+            <div className="about-stat-card">
+              <span className="about-stat-number">2028</span>
+              <span className="about-stat-label">GRADUATION</span>
             </div>
 
-            <div className="about-focus">
-              <span className="focus-label">CURRENT FOCUS</span>
+            <div className="about-stat-card about-stat-wide">
+              <span className="about-stat-label">PRIMARY FOCUS</span>
 
-              <div className="focus-tags">
+              <div className="about-focus-tags">
                 <span>Java</span>
                 <span>DSA</span>
                 <span>MySQL</span>
@@ -64,9 +98,44 @@ function About() {
             </div>
 
           </div>
-
         </div>
 
+        {/* Journey */}
+        <div className="about-journey">
+
+          <div className="about-journey-heading">
+            <div>
+              <span className="section-label">MY JOURNEY</span>
+              <h3>What I'm working toward</h3>
+            </div>
+
+            <p>
+              A continuous path from fundamentals to building complete
+              applications.
+            </p>
+          </div>
+
+          <div className="journey-grid">
+            {journey.map((item) => (
+              <article className="journey-card" key={item.number}>
+
+                <div className="journey-card-top">
+                  <span className="journey-number">
+                    {item.number}
+                  </span>
+
+                  <span className="journey-arrow">↗</span>
+                </div>
+
+                <h3>{item.title}</h3>
+
+                <p>{item.text}</p>
+
+              </article>
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
   );

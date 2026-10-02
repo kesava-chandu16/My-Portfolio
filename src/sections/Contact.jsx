@@ -3,40 +3,61 @@ function Contact() {
     <section className="contact" id="contact">
       <div className="section-container">
 
+        {/* Heading */}
         <div className="section-heading">
           <p className="section-label">CONTACT</p>
 
           <h2>
             Let's build something
             <span className="contact-heading-highlight">
-              together.
+              {" "}together.
             </span>
           </h2>
+
+          <p className="contact-section-intro">
+            Have a project idea, internship opportunity, or just want to
+            connect? I'd be happy to hear from you.
+          </p>
         </div>
 
+        {/* Contact content */}
         <div className="contact-grid">
 
+          {/* Left */}
           <div className="contact-intro">
+
+            <span className="contact-small-label">
+              GET IN TOUCH
+            </span>
+
+            <h3>
+              Let's start a
+              <span> conversation.</span>
+            </h3>
+
             <p className="contact-main-text">
               I'm currently preparing for software development opportunities
-              and always interested in connecting with people who are building
+              and interested in connecting with people who are building
               interesting things.
             </p>
 
             <p className="contact-sub-text">
               Whether you want to discuss a project, collaboration,
-              internship opportunity, or just connect, feel free to reach out.
+              internship opportunity, or simply connect, feel free to reach
+              out.
             </p>
 
             <a
               href="mailto:ravulakesavachandu@gmail.com"
               className="contact-email-button"
             >
-              Send me an email
+              <span>Send me an email</span>
               <span>→</span>
             </a>
+
           </div>
 
+          {/* Right */}
           <div className="contact-details">
 
             <div className="contact-detail">
@@ -59,7 +80,8 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LinkedIn Profile →
+                LinkedIn Profile
+                <span>↗</span>
               </a>
             </div>
 
@@ -73,7 +95,8 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                GitHub Profile →
+                GitHub Profile
+                <span>↗</span>
               </a>
             </div>
 
@@ -87,12 +110,21 @@ function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                LeetCode Profile →
+                LeetCode Profile
+                <span>↗</span>
               </a>
             </div>
 
           </div>
+        </div>
 
+        {/* Availability */}
+        <div className="contact-availability">
+          <span className="contact-availability-dot"></span>
+
+          <span>
+            Open to software development opportunities
+          </span>
         </div>
 
       </div>

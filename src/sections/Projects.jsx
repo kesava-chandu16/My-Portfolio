@@ -1,29 +1,68 @@
+import {
+  FaJava,
+  FaDatabase,
+  FaMapMarkedAlt,
+  FaGithub,
+} from "react-icons/fa";
+
 function Projects() {
   const projects = [
     {
       number: "01",
+      category: "JAVA • DATABASE",
       title: "Student Management System",
       description:
-        "A Java-based application for managing student information and performing database operations such as creating, reading, updating, and deleting student records.",
-      technologies: ["Java", "JDBC", "MySQL"],
+        "A Java-based application for managing student information with MySQL database connectivity and CRUD operations.",
+      technologies: [
+        { name: "Java", icon: <FaJava /> },
+        { name: "JDBC", icon: <FaDatabase /> },
+        { name: "MySQL", icon: <FaDatabase /> },
+      ],
+      features: [
+        "CRUD Operations",
+        "Database Connectivity",
+        "Student Records",
+      ],
       github:
         "https://github.com/kesava-chandu16/StudentManageMentSystem",
     },
+
     {
       number: "02",
+      category: "JAVA • DATABASE",
       title: "Digital Wallet Secure System",
       description:
-        "A Java-based digital wallet application designed to manage users and financial transactions while connecting the application with a MySQL database.",
-      technologies: ["Java", "JDBC", "MySQL"],
+        "A Java-based digital wallet application designed to manage users and financial transactions with MySQL database integration.",
+      technologies: [
+        { name: "Java", icon: <FaJava /> },
+        { name: "JDBC", icon: <FaDatabase /> },
+        { name: "MySQL", icon: <FaDatabase /> },
+      ],
+      features: [
+        "User Management",
+        "Transactions",
+        "Database Integration",
+      ],
       github:
         "https://github.com/kesava-chandu16/DigitalWalletSecureSystem",
     },
+
     {
       number: "03",
-      title: "Smart Campus Navigation System",
+      category: "WEB • NAVIGATION",
+      title: "College Map",
       description:
-        "A college navigation project designed to help students and visitors find blocks, laboratories, auditoriums, and other important locations around the campus.",
-      technologies: ["Web Development", "Maps", "QR Codes"],
+        "A campus navigation project designed to help students and visitors find blocks, laboratories, auditoriums, and other important locations.",
+      technologies: [
+        { name: "Web", icon: "⌘" },
+        { name: "Maps", icon: <FaMapMarkedAlt /> },
+        { name: "QR Codes", icon: "⌁" },
+      ],
+      features: [
+        "Campus Navigation",
+        "Location Discovery",
+        "QR Access",
+      ],
       github: null,
     },
   ];
@@ -32,74 +71,109 @@ function Projects() {
     <section className="projects" id="projects">
       <div className="section-container">
 
+        {/* Heading */}
         <div className="section-heading">
-          <p className="section-label">MY PROJECTS</p>
+          <p className="section-label">SELECTED WORK</p>
 
           <h2>
-            Things I've
+            Projects I've
             <span className="projects-heading-highlight">
-              built.
+              {" "}built.
             </span>
           </h2>
+
+          <p className="projects-intro">
+            Practical applications where I apply programming, database
+            concepts, problem-solving, and software development skills.
+          </p>
         </div>
 
-        <div className="projects-list">
-
+        {/* Projects */}
+        <div className="projects-grid">
           {projects.map((project) => (
-            <article
-              className="project-card"
-              key={project.number}
-            >
+            <article className="project-card" key={project.number}>
 
-              <div className="project-number">
-                {project.number}
+              {/* Top */}
+              <div className="project-card-top">
+                <span className="project-number">
+                  {project.number}
+                </span>
+
+                <span className="project-category">
+                  {project.category}
+                </span>
               </div>
 
-              <div className="project-content">
+              {/* Main content */}
+              <div className="project-card-content">
 
-                <div className="project-title-row">
-                  <h3>{project.title}</h3>
+                <h3>{project.title}</h3>
 
-                  {project.github && (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="project-github"
-                    >
-                      GitHub ↗
-                    </a>
-                  )}
-                </div>
-
-                <p>
+                <p className="project-description">
                   {project.description}
                 </p>
 
-                <div className="project-technologies">
-                  {project.technologies.map((technology) => (
-                    <span key={technology}>
-                      {technology}
+                <div className="project-features">
+                  {project.features.map((feature) => (
+                    <span key={feature}>
+                      {feature}
                     </span>
                   ))}
                 </div>
 
-                {project.github && (
+              </div>
+
+              {/* Bottom */}
+              <div className="project-card-bottom">
+
+                <div className="project-technologies">
+                  {project.technologies.map((technology) => (
+                    <span
+                      className="project-technology"
+                      key={technology.name}
+                    >
+                      <span className="project-tech-icon">
+                        {technology.icon}
+                      </span>
+
+                      {technology.name}
+                    </span>
+                  ))}
+                </div>
+
+                {project.github ? (
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-link"
                   >
-                    View Source Code →
+                    <FaGithub />
+
+                    <span>GitHub</span>
+
+                    <span>↗</span>
                   </a>
+                ) : (
+                  <span className="project-status">
+                    In Development
+                  </span>
                 )}
 
               </div>
-
             </article>
           ))}
+        </div>
 
+        {/* Bottom note */}
+        <div className="projects-bottom">
+          <span className="projects-bottom-line"></span>
+
+          <p>
+            More projects will be added as I continue learning and building.
+          </p>
+
+          <span className="projects-bottom-line"></span>
         </div>
 
       </div>
